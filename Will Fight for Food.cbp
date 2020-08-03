@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Will Fight for Food" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Will Fight for Food" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Will Fight for Food" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=c++0x" />
+			<Add option="-Wall" />
+			<Add option="`sdl-config --cflags`" />
+		</Compiler>
+		<Linker>
+			<Add option="`sdl-config --libs`" />
+			<Add library="libboost_system" />
+			<Add library="libboost_filesystem" />
+			<Add library="GLEW" />
+			<Add library="GLU" />
+			<Add library="GL" />
+			<Add library="SDL" />
+			<Add library="SDL_ttf" />
+			<Add library="SDL_image" />
+			<Add library="SDL_mixer" />
+			<Add library="SDL_sound" />
+		</Linker>
+		<Unit filename="AssetManager.cpp" />
+		<Unit filename="AssetManager.h" />
+		<Unit filename="Caption.cpp" />
+		<Unit filename="Caption.h" />
+		<Unit filename="Conversation.cpp" />
+		<Unit filename="Conversation.h" />
+		<Unit filename="ConversationPref.h" />
+		<Unit filename="EventSequence.cpp" />
+		<Unit filename="EventSequence.h" />
+		<Unit filename="FightInput.cpp" />
+		<Unit filename="FightInput.h" />
+		<Unit filename="GameClock.h" />
+		<Unit filename="GameObjective.cpp" />
+		<Unit filename="GameObjective.h" />
+		<Unit filename="GameOverMenu.cpp" />
+		<Unit filename="GameOverMenu.h" />
+		<Unit filename="GameParam.cpp" />
+		<Unit filename="GameParam.h" />
+		<Unit filename="GameSaveMenu.cpp" />
+		<Unit filename="GameSaveMenu.h" />
+		<Unit filename="HintBox.cpp" />
+		<Unit filename="HintBox.h" />
+		<Unit filename="HoverInfo.cpp" />
+		<Unit filename="HoverInfo.h" />
+		<Unit filename="ImageData.cpp" />
+		<Unit filename="ImageData.h" />
+		<Unit filename="Inventory.cpp" />
+		<Unit filename="Inventory.h" />
+		<Unit filename="Item.cpp" />
+		<Unit filename="Item.h" />
+		<Unit filename="ItemCollection.cpp" />
+		<Unit filename="ItemCollection.h" />
+		<Unit filename="ItemSlot.cpp" />
+		<Unit filename="ItemSlot.h" />
+		<Unit filename="KeyBindMenu.cpp" />
+		<Unit filename="KeyBindMenu.h" />
+		<Unit filename="LevelExit.cpp" />
+		<Unit filename="LevelExit.h" />
+		<Unit filename="LevelLayer.cpp" />
+		<Unit filename="LevelLayer.h" />
+		<Unit filename="LoadingScreen.cpp" />
+		<Unit filename="LoadingScreen.h" />
+		<Unit filename="ModMenu.cpp" />
+		<Unit filename="ModMenu.h" />
+		<Unit filename="MusicManager.cpp" />
+		<Unit filename="MusicManager.h" />
+		<Unit filename="ObjectHandler.cpp" />
+		<Unit filename="ObjectHandler.h" />
+		<Unit filename="OptionMenu.cpp" />
+		<Unit filename="OptionMenu.h" />
+		<Unit filename="PauseMenu.cpp" />
+		<Unit filename="PauseMenu.h" />
+		<Unit filename="PopUp.cpp" />
+		<Unit filename="PopUp.h" />
+		<Unit filename="ReplyMenu.h" />
+		<Unit filename="ResolutionMenu.cpp" />
+		<Unit filename="ResolutionMenu.h" />
+		<Unit filename="ScreenSettings.cpp" />
+		<Unit filename="ScreenSettings.h" />
+		<Unit filename="SentenceMaker.cpp" />
+		<Unit filename="SentenceMaker.h" />
+		<Unit filename="SlideShow.cpp" />
+		<Unit filename="SlideShow.h" />
+		<Unit filename="Stat.cpp" />
+		<Unit filename="Stat.h" />
+		<Unit filename="TextManager.cpp" />
+		<Unit filename="TextManager.h" />
+		<Unit filename="VarCondition.cpp" />
+		<Unit filename="VarCondition.h" />
+		<Unit filename="XMLDoc.cpp" />
+		<Unit filename="XMLDoc.h" />
+		<Unit filename="animation.cpp" />
+		<Unit filename="animation.h" />
+		<Unit filename="app.cpp" />
+		<Unit filename="app.h" />
+		<Unit filename="button.cpp" />
+		<Unit filename="button.h" />
+		<Unit filename="cb.bmp" />
+		<Unit filename="conversationdata.cpp" />
+		<Unit filename="conversationdata.h" />
+		<Unit filename="cursor.cpp" />
+		<Unit filename="cursor.h" />
+		<Unit filename="dialogbox.cpp" />
+		<Unit filename="dialogbox.h" />
+		<Unit filename="fight.cpp" />
+		<Unit filename="fight.h" />
+		<Unit filename="game.cpp" />
+		<Unit filename="game.h" />
+		<Unit filename="gameevent.cpp" />
+		<Unit filename="gameevent.h" />
+		<Unit filename="gameeventmanager.cpp" />
+		<Unit filename="gameeventmanager.h" />
+		<Unit filename="gamestate_container.h" />
+		<Unit filename="gamestates.h" />
+		<Unit filename="graphics.cpp" />
+		<Unit filename="graphics.h" />
+		<Unit filename="hud.cpp" />
+		<Unit filename="hud.h" />
+		<Unit filename="icon1.ico" />
+		<Unit filename="inputval.cpp" />
+		<Unit filename="inputval.h" />
+		<Unit filename="level.cpp" />
+		<Unit filename="level.h" />
+		<Unit filename="levelpaths.h" />
+		<Unit filename="loaders.cpp" />
+		<Unit filename="loaders.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="mainmenu.cpp" />
+		<Unit filename="mainmenu.h" />
+		<Unit filename="map.cpp" />
+		<Unit filename="map.h" />
+		<Unit filename="menu.cpp" />
+		<Unit filename="menu.h" />
+		<Unit filename="movement.h" />
+		<Unit filename="numstr.h" />
+		<Unit filename="object.cpp" />
+		<Unit filename="object.h" />
+		<Unit filename="rapidxml/rapidxml.hpp" />
+		<Unit filename="rapidxml/rapidxml_iterators.hpp" />
+		<Unit filename="rapidxml/rapidxml_print.hpp" />
+		<Unit filename="rapidxml/rapidxml_utils.hpp" />
+		<Unit filename="savefile.h" />
+		<Unit filename="slider.cpp" />
+		<Unit filename="slider.h" />
+		<Unit filename="splash.cpp" />
+		<Unit filename="splash.h" />
+		<Unit filename="sprite.cpp" />
+		<Unit filename="sprite.h" />
+		<Unit filename="textarea.cpp" />
+		<Unit filename="textarea.h" />
+		<Unit filename="timer.cpp" />
+		<Unit filename="timer.h" />
+		<Unit filename="vectorf.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

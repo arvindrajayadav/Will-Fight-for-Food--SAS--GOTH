@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AE747993-04A9-41AA-90CC-F0336EE7751B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CRAB</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)SDL External\include;D:\Libs\boost\;$(SolutionDir)OpenGL external\glew\x86\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)SDL External\lib\x86;D:\Libs\boost\stage\lib;$(SolutionDir)OpenGL external\glew\x86\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)SDL External\include;D:\Libs\boost\;$(SolutionDir)OpenGL external\glew\x86\include;$(SolutionDir)steamworks\public;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)SDL External\lib\x86;D:\Libs\boost\stage\lib;$(SolutionDir)OpenGL external\glew\x86\lib;$(SolutionDir)steamworks\redistributable_bin;$(LibraryPath)</LibraryPath>
+    <TargetName>WFF</TargetName>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sdl.lib;sdlmain.lib;sdl_image.lib;sdl_ttf.lib;sdl_mixer.lib;opengl32.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LargeAddressAware>true</LargeAddressAware>
+      <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBCS;GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <EnablePREfast>false</EnablePREfast>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>sdl.lib;sdlmain.lib;sdl_image.lib;sdl_ttf.lib;sdl_mixer.lib;opengl32.lib;glew32s.lib;steam_api.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LargeAddressAware>true</LargeAddressAware>
+      <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(OutDir)$(TargetName)$(TargetExt)" "D:\Projects\Project Fridge\Will Fight For Food build\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="animation.cpp" />
+    <ClCompile Include="app.cpp" />
+    <ClCompile Include="AssetManager.cpp" />
+    <ClCompile Include="button.cpp" />
+    <ClCompile Include="Caption.cpp" />
+    <ClCompile Include="CustomizeMenu.cpp" />
+    <ClCompile Include="ImageData.cpp" />
+    <ClCompile Include="LoadingScreen.cpp" />
+    <ClCompile Include="MusicManager.cpp" />
+    <ClCompile Include="ResolutionMenu.cpp" />
+    <ClCompile Include="ScreenSettings.cpp" />
+    <ClCompile Include="TextManager.cpp" />
+    <ClCompile Include="VarCondition.cpp" />
+    <ClCompile Include="XMLDoc.cpp" />
+    <ClCompile Include="Conversation.cpp" />
+    <ClCompile Include="conversationdata.cpp" />
+    <ClCompile Include="cursor.cpp" />
+    <ClCompile Include="dialogbox.cpp" />
+    <ClCompile Include="EventSequence.cpp" />
+    <ClCompile Include="fight.cpp" />
+    <ClCompile Include="FightInput.cpp" />
+    <ClCompile Include="GameParam.cpp" />
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="gameevent.cpp" />
+    <ClCompile Include="gameeventmanager.cpp" />
+    <ClCompile Include="GameObjective.cpp" />
+    <ClCompile Include="GameOverMenu.cpp" />
+    <ClCompile Include="hintbox.cpp" />
+    <ClCompile Include="HoverInfo.cpp" />
+    <ClCompile Include="hud.cpp" />
+    <ClCompile Include="graphics.cpp" />
+    <ClCompile Include="inputval.cpp" />
+    <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemCollection.cpp" />
+    <ClCompile Include="ItemSlot.cpp" />
+    <ClCompile Include="KeyBindMenu.cpp" />
+    <ClCompile Include="level.cpp" />
+    <ClCompile Include="LevelExit.cpp" />
+    <ClCompile Include="LevelLayer.cpp" />
+    <ClCompile Include="loaders.cpp" />
+    <ClCompile Include="GameSaveMenu.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainmenu.cpp" />
+    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="ModMenu.cpp" />
+    <ClCompile Include="object.cpp" />
+    <ClCompile Include="ObjectHandler.cpp" />
+    <ClCompile Include="OptionMenu.cpp" />
+    <ClCompile Include="PauseMenu.cpp" />
+    <ClCompile Include="PopUp.cpp" />
+    <ClCompile Include="SentenceMaker.cpp" />
+    <ClCompile Include="slider.cpp" />
+    <ClCompile Include="SlideShow.cpp" />
+    <ClCompile Include="splash.cpp" />
+    <ClCompile Include="sprite.cpp" />
+    <ClCompile Include="Stat.cpp" />
+    <ClCompile Include="textarea.cpp" />
+    <ClCompile Include="timer.cpp" />
+    <ClCompile Include="map.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="animation.h" />
+    <ClInclude Include="app.h" />
+    <ClInclude Include="AssetManager.h" />
+    <ClInclude Include="button.h" />
+    <ClInclude Include="Caption.h" />
+    <ClInclude Include="CustomizeMenu.h" />
+    <ClInclude Include="ImageData.h" />
+    <ClInclude Include="LoadingScreen.h" />
+    <ClInclude Include="MusicManager.h" />
+    <ClInclude Include="ReplyMenu.h" />
+    <ClInclude Include="ResolutionMenu.h" />
+    <ClInclude Include="savefile.h" />
+    <ClInclude Include="ScreenSettings.h" />
+    <ClInclude Include="TextManager.h" />
+    <ClInclude Include="VarCondition.h" />
+    <ClInclude Include="vectorf.h" />
+    <ClInclude Include="XMLDoc.h" />
+    <ClInclude Include="Conversation.h" />
+    <ClInclude Include="conversationdata.h" />
+    <ClInclude Include="ConversationPref.h" />
+    <ClInclude Include="cursor.h" />
+    <ClInclude Include="dialogbox.h" />
+    <ClInclude Include="EventSequence.h" />
+    <ClInclude Include="fight.h" />
+    <ClInclude Include="FightInput.h" />
+    <ClInclude Include="GameParam.h" />
+    <ClInclude Include="game.h" />
+    <ClInclude Include="GameClock.h" />
+    <ClInclude Include="gameevent.h" />
+    <ClInclude Include="gameeventmanager.h" />
+    <ClInclude Include="GameObjective.h" />
+    <ClInclude Include="GameOverMenu.h" />
+    <ClInclude Include="HintBox.h" />
+    <ClInclude Include="HoverInfo.h" />
+    <ClInclude Include="hud.h" />
+    <ClInclude Include="inputval.h" />
+    <ClInclude Include="Inventory.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemCollection.h" />
+    <ClInclude Include="ItemSlot.h" />
+    <ClInclude Include="KeyBindMenu.h" />
+    <ClInclude Include="LevelExit.h" />
+    <ClInclude Include="LevelLayer.h" />
+    <ClInclude Include="gamestates.h" />
+    <ClInclude Include="gamestate_container.h" />
+    <ClInclude Include="graphics.h" />
+    <ClInclude Include="level.h" />
+    <ClInclude Include="loaders.h" />
+    <ClInclude Include="GameSaveMenu.h" />
+    <ClInclude Include="mainmenu.h" />
+    <ClInclude Include="menu.h" />
+    <ClInclude Include="ModMenu.h" />
+    <ClInclude Include="movement.h" />
+    <ClInclude Include="numstr.h" />
+    <ClInclude Include="object.h" />
+    <ClInclude Include="ObjectHandler.h" />
+    <ClInclude Include="OptionMenu.h" />
+    <ClInclude Include="PauseMenu.h" />
+    <ClInclude Include="PopUp.h" />
+    <ClInclude Include="rapidxml\rapidxml.hpp" />
+    <ClInclude Include="rapidxml\rapidxml_iterators.hpp" />
+    <ClInclude Include="rapidxml\rapidxml_print.hpp" />
+    <ClInclude Include="rapidxml\rapidxml_utils.hpp" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SentenceMaker.h" />
+    <ClInclude Include="slider.h" />
+    <ClInclude Include="SlideShow.h" />
+    <ClInclude Include="splash.h" />
+    <ClInclude Include="sprite.h" />
+    <ClInclude Include="Stat.h" />
+    <ClInclude Include="textarea.h" />
+    <ClInclude Include="timer.h" />
+    <ClInclude Include="map.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CRAB.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon1.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
